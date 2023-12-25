@@ -9,9 +9,10 @@ import { FOOTER_TEXT_COLOR } from "../constants/AppConstants";
 
 type Props = {
   flag?: boolean;
+  phoneNumber?:number;
 };
 const DARK_TEXT_COLOR = "#000";
-const ExtraMessageComponent = ({ flag = false }: Props) => {
+const ExtraMessageComponent = ({ flag = false, phoneNumber=9657007719 }: Props) => {
   return (
     <View style={styles.container}>
       {flag ? (
@@ -25,7 +26,7 @@ const ExtraMessageComponent = ({ flag = false }: Props) => {
               },
             ]}
           >
-            +91 9657007719{" "}
+            +91 {phoneNumber}
           </Text>
         </>
       ) : null}

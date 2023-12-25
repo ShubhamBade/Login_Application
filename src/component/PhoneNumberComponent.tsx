@@ -1,5 +1,5 @@
 import { View, StyleSheet, TextInput } from "react-native";
-import React from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import {
   responsiveFontSize,
   responsiveHeight,
@@ -11,7 +11,10 @@ import {
   INPUT_TEXT_COLOR,
 } from "../constants/AppConstants";
 
-type Props = {};
+type Props = {
+  phoneNumber: number;
+  setPhoneNumber: Dispatch<SetStateAction<number>>;
+};
 
 const PhoneNumberComponent = (props: Props) => {
   return (
@@ -21,6 +24,9 @@ const PhoneNumberComponent = (props: Props) => {
         maxLength={10}
         inputMode="numeric"
         style={styles.textInputStyle}
+        onChangeText={(number) => {
+          props.setPhoneNumber(parseInt(number));
+        }}
       />
     </View>
   );
@@ -40,7 +46,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     borderWidth: responsiveWidth(1),
     borderColor: INPUT_BORDER_COLOR,
-    color:INPUT_TEXT_COLOR
+    color: INPUT_TEXT_COLOR,
   },
 });
 

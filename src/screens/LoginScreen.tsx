@@ -1,26 +1,34 @@
 import { View, StyleSheet } from "react-native";
-import React from "react";
-import AppHeader from "../component/AppHeader";
-import ImageComponent from "../component/ImageComponent";
+import React, { useState } from "react";
 import { APP_BACKGROUND } from "../constants/AppConstants";
-import PhoneNumberComponent from "../component/PhoneNumberComponent";
-import ExtraMessageComponent from "../component/ExtraMessageComponent";
-import ButtonComponent from "../component/ButtonComponent";
-import AppFooter from "../component/AppFooter";
+import {
+  AppFooter,
+  AppHeader,
+  ButtonComponent,
+  ExtraMessageComponent,
+  ImageComponent,
+  PhoneNumberComponent,
+} from "../component/index";
 
 type Props = {};
 
 const LoginScreen = ({ navigation }) => {
+  const [phoneNumber, setPhoneNumber] = useState<number>();
   return (
     <View style={styles.container}>
       <AppHeader />
       <ImageComponent />
       <ExtraMessageComponent />
-      <PhoneNumberComponent />
+      <PhoneNumberComponent
+        phoneNumber={phoneNumber}
+        setPhoneNumber={setPhoneNumber}
+      />
       <ButtonComponent
         title="Send OTP"
         onPress={() => {
-          navigation.navigate("OtpVerificationScreen");
+          navigation.navigate("OtpVerificationScreen", {
+            phoneNumber: phoneNumber,
+          });
         }}
       />
       <AppFooter />

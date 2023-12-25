@@ -12,7 +12,7 @@ const AppNavigation = (props: Props) => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          headerShown: false
+          headerShown: false,
         }}
       >
         <Stack.Screen name="LoginScreen" component={LoginScreen} />

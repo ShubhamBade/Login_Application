@@ -1,6 +1,6 @@
 // app constants to avoid harcoded values
 export const APP_BACKGROUND="#fff";
-export const HEADER_TEXT_COLOR="#000";
+export const HEADER_TEXT_COLOR="#5D3FD3";
 export const FOOTER_TEXT_COLOR="#B3B3B3"
 export const INPUT_BORDER_COLOR="#B3B3B3"
 export const INPUT_TEXT_COLOR="#B3B3B3"

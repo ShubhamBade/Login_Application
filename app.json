@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "loginapp",
+    "name": "Login Application",
     "slug": "loginapp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.shubhambade.loginapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c7f93168-16b9-4cf6-a952-d1aa2c04f336"
+      }
     }
   }
 }
